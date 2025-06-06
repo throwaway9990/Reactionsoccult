@@ -5932,7 +5932,7 @@ local tbl =
 			uuid = "07c6a030-6afd-9a0c-8e6e-1a4b88514b31",
 			version = 2,
 		},
-		inheritedIndex = 38,
+		inheritedIndex = 40,
 	},
 	
 	{
@@ -6791,49 +6791,54 @@ local tbl =
 						{
 							
 							{
-								"019e7cc2-6440-373b-b74a-bc578bf2ac9e",
+								"e7de50ca-b2f8-752a-b528-db724f2d7054",
 								true,
 							},
 							
 							{
-								"00512889-0c6b-45f0-a077-0678325f8fba",
+								"2312ae26-c802-ad39-bbbf-0830ed918dac",
 								true,
 							},
 							
 							{
-								"6af4a98b-788f-49ad-aec3-2c9f5dd64014",
+								"e27ae646-5033-f9d0-8f32-0bab1ca37b02",
 								true,
 							},
 							
 							{
-								"16b98c73-9907-ac14-8afd-89e0c1d466ad",
+								"b89deb6f-ac1d-7569-98b2-ce63b9dc89ac",
 								true,
 							},
 							
 							{
-								"c3e88b2e-d998-eb65-bb46-1d18cdf3bb14",
+								"9110e23e-2719-d914-ae4f-d0ebe1f42041",
 								true,
 							},
 							
 							{
-								"b6827b34-c420-fece-928a-4d4b389e554a",
+								"1e471142-f907-e1dd-abd5-6325e970db36",
 								true,
 							},
 							
 							{
-								"c17f3a68-ab41-4b11-8929-00bed12fc141",
+								"2d8e383b-1d88-807a-898f-3071b08f66cc",
 								true,
 							},
 							
 							{
-								"68e8614d-2f9d-6f76-9154-f9a152f1a5a0",
+								"15012492-bdd7-fe2d-b135-055c116ce1a5",
+								true,
+							},
+							
+							{
+								"0c8bbab7-4820-17c9-a40c-f1c3e4572b6e",
 								true,
 							},
 						},
 						endIfUsed = true,
 						gVar = "ACR_RikuRDM3_Hotbar_DutyAction4",
 						name = "Zeninage",
-						uuid = "5b7252fb-594c-1855-8733-872996a3fd7a",
+						uuid = "b8fb2967-ec8b-3e1a-90c2-d4cc7d3703c8",
 						variableTogglesType = 2,
 						version = 2.1,
 					},
@@ -6849,7 +6854,7 @@ local tbl =
 						conditionLua = "return FFXIV_Common_BotRunning == true",
 						dequeueIfLuaFalse = true,
 						name = "Bot Running",
-						uuid = "019e7cc2-6440-373b-b74a-bc578bf2ac9e",
+						uuid = "e7de50ca-b2f8-752a-b528-db724f2d7054",
 						version = 2,
 					},
 				},
@@ -6861,7 +6866,7 @@ local tbl =
 						category = "Self",
 						dequeueIfLuaFalse = true,
 						name = "Is P. Sam",
-						uuid = "00512889-0c6b-45f0-a077-0678325f8fba",
+						uuid = "2312ae26-c802-ad39-bbbf-0830ed918dac",
 						version = 2,
 					},
 				},
@@ -6872,7 +6877,7 @@ local tbl =
 						category = "Self",
 						conditionType = 7,
 						dequeueIfLuaFalse = true,
-						uuid = "6af4a98b-788f-49ad-aec3-2c9f5dd64014",
+						uuid = "e27ae646-5033-f9d0-8f32-0bab1ca37b02",
 						version = 2,
 					},
 				},
@@ -6882,7 +6887,7 @@ local tbl =
 					{
 						conditionType = 5,
 						dequeueIfLuaFalse = true,
-						uuid = "16b98c73-9907-ac14-8afd-89e0c1d466ad",
+						uuid = "b89deb6f-ac1d-7569-98b2-ce63b9dc89ac",
 						version = 2,
 					},
 				},
@@ -6894,7 +6899,7 @@ local tbl =
 						conditionLua = "return TensorReactions_CurrentCombatTimer > 4.0",
 						dequeueIfLuaFalse = true,
 						name = "Combat >= 4s",
-						uuid = "c3e88b2e-d998-eb65-bb46-1d18cdf3bb14",
+						uuid = "9110e23e-2719-d914-ae4f-d0ebe1f42041",
 						version = 2,
 					},
 				},
@@ -6906,7 +6911,19 @@ local tbl =
 						conditionLua = "return _G[\"ACR_\" .. gACRSelectedProfiles[TensorCore.mGetPlayer().job] .. \"_CD\"]",
 						dequeueIfLuaFalse = true,
 						name = "CD Enabled",
-						uuid = "b6827b34-c420-fece-928a-4d4b389e554a",
+						uuid = "1e471142-f907-e1dd-abd5-6325e970db36",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return ActionList:Get(5,34):CanCastResult() ~= 583",
+						dequeueIfLuaFalse = true,
+						name = "Has Coffer",
+						uuid = "2d8e383b-1d88-807a-898f-3071b08f66cc",
 						version = 2,
 					},
 				},
@@ -6919,7 +6936,7 @@ local tbl =
 						dequeueIfLuaFalse = true,
 						inRangeValue = 30,
 						name = "Target <= 30y",
-						uuid = "c17f3a68-ab41-4b11-8929-00bed12fc141",
+						uuid = "15012492-bdd7-fe2d-b135-055c116ce1a5",
 						version = 2,
 					},
 				},
@@ -6934,17 +6951,17 @@ local tbl =
 						conditionType = 4,
 						dequeueIfLuaFalse = true,
 						name = "Zeninage CD <= 3s",
-						uuid = "68e8614d-2f9d-6f76-9154-f9a152f1a5a0",
+						uuid = "0c8bbab7-4820-17c9-a40c-f1c3e4572b6e",
 						version = 2,
 					},
 				},
 			},
 			name = "P. Sam Zeninage",
 			throttleTime = 1500,
-			uuid = "e33de213-4f7a-1a02-bf96-98377f77ffaa",
+			uuid = "2b8ae391-8be0-a38b-94f9-d49e38186a1d",
 			version = 2,
 		},
-		inheritedIndex = 32,
+		inheritedIndex = 33,
 	},
 	
 	{
@@ -7216,7 +7233,7 @@ local tbl =
 					data = 
 					{
 						category = "Lua",
-						conditionLua = "return ActionList:Get(5,34):CanCastResult() ~= 579",
+						conditionLua = "return ActionList:Get(5,34):CanCastResult() ~= 579 and ActionList:Get(5,34):CanCastResult() ~= 583",
 						dequeueIfLuaFalse = true,
 						name = "Has Zeninage",
 						uuid = "f94fb16c-6146-98e5-b2ac-a3cfa72b0d77",
@@ -7240,10 +7257,10 @@ local tbl =
 			},
 			name = "P. Sam Iainuki",
 			throttleTime = 1500,
-			uuid = "a6f0edaa-0b05-c447-8e3a-697e9055c917",
+			uuid = "ea03e1c6-c7fc-5241-ac55-989016a66864",
 			version = 2,
 		},
-		inheritedIndex = 35,
+		inheritedIndex = 34,
 	},
 	
 	{
@@ -8287,7 +8304,7 @@ local tbl =
 			uuid = "063b86b6-c420-08c8-b4d6-9f5efd9b1e6a",
 			version = 2,
 		},
-		inheritedIndex = 46,
+		inheritedIndex = 47,
 	}, 
 	inheritedProfiles = 
 	{
