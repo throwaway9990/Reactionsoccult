@@ -25,6 +25,138 @@ local tbl =
 				{
 					data = 
 					{
+						actionID = 41647,
+						conditions = 
+						{
+							
+							{
+								"bead46c3-17fe-4bf8-a9cb-2e315439988f",
+								true,
+							},
+							
+							{
+								"43b369ad-2b19-c673-8478-6db60cf737fb",
+								true,
+							},
+							
+							{
+								"b35fdc9a-5bdd-3401-aab1-7b46c2f170ed",
+								true,
+							},
+							
+							{
+								"77b8eed8-0cfb-695a-a37c-568bb356cfeb",
+								true,
+							},
+						},
+						gVar = "ACR_TensorMagnum3_Hotbar_DutyAction3",
+						ignoreWeaveRules = true,
+						name = "Vigilance",
+						uuid = "b5b7bdaf-d738-0790-9675-a5b28a36f08b",
+						variableTogglesType = 2,
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						localmapid = 1252,
+						name = "South Horn",
+						uuid = "bead46c3-17fe-4bf8-a9cb-2e315439988f",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 7,
+						inCombatType = 2,
+						name = "Out of Combat",
+						uuid = "43b369ad-2b19-c673-8478-6db60cf737fb",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						buffID = 4369,
+						category = "Self",
+						dequeueIfLuaFalse = true,
+						name = "Phantom Thief",
+						uuid = "b35fdc9a-5bdd-3401-aab1-7b46c2f170ed",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return FFXIV_Common_BotRunning == true",
+						dequeueIfLuaFalse = true,
+						name = "Bot Running",
+						uuid = "77b8eed8-0cfb-695a-a37c-568bb356cfeb",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						buffCheckType = 2,
+						buffID = 418,
+						buffIDList = 
+						{
+							418,
+							148,
+						},
+						category = "Self",
+						dequeueIfLuaFalse = true,
+						matchAnyBuff = true,
+						name = "Not Invuln",
+						uuid = "269ed8e2-ad8e-db38-bd40-81e0877c72b2",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return data.rezzTimer == nil or TimeSince(data.rezzTimer) >= 1000",
+						dequeueIfLuaFalse = true,
+						name = "Check Rezz Timer",
+						uuid = "162cf644-0e36-bb8c-bd7f-20fa627e9638",
+						version = 2,
+					},
+				},
+			},
+			name = "[Thief] Vigilance",
+			throttleTime = 1250,
+			uuid = "1017b58d-f39f-e551-a652-11aaff349c79",
+			version = 2,
+		},
+		inheritedIndex = 2,
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
 						actionID = 41645,
 						conditions = 
 						{
@@ -479,7 +611,7 @@ local tbl =
 			uuid = "078ede44-5abe-caba-b0ec-5925bf1a9bca",
 			version = 2,
 		},
-		inheritedIndex = 8,
+		inheritedIndex = 9,
 	},
 	
 	{
@@ -702,7 +834,7 @@ local tbl =
 			uuid = "11416d58-8f1e-d1bd-873c-a7ef151ed802",
 			version = 2,
 		},
-		inheritedIndex = 8,
+		inheritedIndex = 9,
 	},
 	
 	{
@@ -895,7 +1027,7 @@ local tbl =
 			uuid = "bdd49282-6293-25e3-a474-c8bd374e40f0",
 			version = 2,
 		},
-		inheritedIndex = 10,
+		inheritedIndex = 11,
 	},
 	
 	{
@@ -1777,7 +1909,7 @@ local tbl =
 			uuid = "a6c7e7ac-46cf-12e7-ae07-883da63ba66c",
 			version = 2,
 		},
-		inheritedIndex = 11,
+		inheritedIndex = 12,
 	},
 	
 	{
@@ -1927,7 +2059,7 @@ local tbl =
 			uuid = "9f00e291-a1de-4adf-8ae0-c21f1280e8d4",
 			version = 2,
 		},
-		inheritedIndex = 13,
+		inheritedIndex = 14,
 	},
 	
 	{
@@ -2517,7 +2649,7 @@ local tbl =
 			uuid = "dc304137-5b9c-951b-b18a-6efe4661c609",
 			version = 2,
 		},
-		inheritedIndex = 17,
+		inheritedIndex = 18,
 	},
 	
 	{
@@ -3669,7 +3801,7 @@ local tbl =
 			uuid = "ba84c9d8-adc9-f0e6-81ea-cff5b1296909",
 			version = 2,
 		},
-		inheritedIndex = 21,
+		inheritedIndex = 22,
 	},
 	
 	{
@@ -3854,7 +3986,7 @@ local tbl =
 			uuid = "4e2f6e7f-2afc-a411-b017-8a8bf5ddc247",
 			version = 2,
 		},
-		inheritedIndex = 27,
+		inheritedIndex = 28,
 	},
 	
 	{
@@ -4266,7 +4398,7 @@ local tbl =
 			uuid = "0f4baaed-dedb-5c6d-99a3-d68ba7f39935",
 			version = 2,
 		},
-		inheritedIndex = 27,
+		inheritedIndex = 28,
 	},
 	
 	{
@@ -4401,7 +4533,7 @@ local tbl =
 			uuid = "86b47b65-6cda-50ef-a11e-b5a2ce962755",
 			version = 2,
 		},
-		inheritedIndex = 22,
+		inheritedIndex = 23,
 	},
 	
 	{
@@ -4581,7 +4713,7 @@ local tbl =
 			uuid = "9f9cae6c-c575-3948-89d1-fd42800991ff",
 			version = 2,
 		},
-		inheritedIndex = 23,
+		inheritedIndex = 24,
 	},
 	
 	{
@@ -4705,7 +4837,7 @@ local tbl =
 			uuid = "5ec3c4bc-96c4-4106-a515-d1d8721a9fa0",
 			version = 2,
 		},
-		inheritedIndex = 24,
+		inheritedIndex = 25,
 	},
 	
 	{
@@ -5217,7 +5349,7 @@ local tbl =
 			uuid = "0356c312-3cfa-68dd-b31e-c8ae10d1af28",
 			version = 2,
 		},
-		inheritedIndex = 26,
+		inheritedIndex = 27,
 	},
 	
 	{
@@ -5799,7 +5931,7 @@ local tbl =
 			uuid = "07c6a030-6afd-9a0c-8e6e-1a4b88514b31",
 			version = 2,
 		},
-		inheritedIndex = 40,
+		inheritedIndex = 41,
 	},
 	
 	{
@@ -6247,7 +6379,7 @@ local tbl =
 			uuid = "988f3e4c-2dda-92d2-8702-0c90ee69af40",
 			version = 2,
 		},
-		inheritedIndex = 30,
+		inheritedIndex = 31,
 	},
 	
 	{
@@ -6640,7 +6772,7 @@ local tbl =
 			uuid = "fb45e2b2-c2e4-1403-8a4b-1c629f622026",
 			version = 2,
 		},
-		inheritedIndex = 31,
+		inheritedIndex = 32,
 	},
 	
 	{
@@ -6828,7 +6960,7 @@ local tbl =
 			uuid = "2b8ae391-8be0-a38b-94f9-d49e38186a1d",
 			version = 2,
 		},
-		inheritedIndex = 33,
+		inheritedIndex = 34,
 	},
 	
 	{
@@ -7127,7 +7259,7 @@ local tbl =
 			uuid = "ea03e1c6-c7fc-5241-ac55-989016a66864",
 			version = 2,
 		},
-		inheritedIndex = 34,
+		inheritedIndex = 35,
 	},
 	
 	{
@@ -7226,7 +7358,7 @@ local tbl =
 			uuid = "a1fbc94b-b726-2c4c-883e-83a2d83c74ce",
 			version = 2,
 		},
-		inheritedIndex = 3,
+		inheritedIndex = 4,
 	},
 	
 	{
