@@ -960,6 +960,7 @@ local tbl =
 						category = "Self",
 						comparator = 2,
 						conditionType = 4,
+						dequeueIfLuaFalse = true,
 						uuid = "e930a2b8-8623-f4bd-a86a-4025d41e6e91",
 						version = 2,
 					},
@@ -1154,6 +1155,7 @@ local tbl =
 						category = "Self",
 						comparator = 2,
 						conditionType = 4,
+						dequeueIfLuaFalse = true,
 						uuid = "e930a2b8-8623-f4bd-a86a-4025d41e6e91",
 						version = 2,
 					},
@@ -6379,7 +6381,7 @@ local tbl =
 			uuid = "988f3e4c-2dda-92d2-8702-0c90ee69af40",
 			version = 2,
 		},
-		inheritedIndex = 31,
+		inheritedIndex = 29,
 	},
 	
 	{
@@ -7386,421 +7388,6 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "MoogleTelegraphs.Settings.aoeIDUserBlacklist[eventArgs.aoeID] = {label = \"Lethal Nails\", source = \"CE: Deathclaw\"}\nlocal delay = eventArgs.delay-2.5\nTensorCore.getMoogleDrawer():addTimedRectOnEnt((eventArgs.duration-delay)*1000,eventArgs.entityID,50,eventArgs.aoeWidth,nil,delay*1000)\ndata.firstClawModel = nil\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"77a3f58d-a783-7f7b-9181-a985b5f28107",
-								true,
-							},
-							
-							{
-								"ebed26f6-d5ad-9622-9e62-354e7fe6cb2b",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "4bb9c9cd-fce1-0703-9754-8fca5d8f166c",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return eventArgs.aoeName == \"Lethal Nails\"",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 3,
-						eventArgType = 2,
-						spellIDList = 
-						{
-							41315,
-							41316,
-							41317,
-							41318,
-							41319,
-						},
-						uuid = "ebed26f6-d5ad-9622-9e62-354e7fe6cb2b",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						uuid = "77a3f58d-a783-7f7b-9181-a985b5f28107",
-						version = 2,
-					},
-				},
-			},
-			eventType = 18,
-			name = "[DeathClaw] Clawmarks AoE",
-			uuid = "4ee2ac30-70da-af85-ba5a-e6d98521b619",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "data.firstClawModel = data.firstClawModel or Argus.getEntityModel(eventArgs.entityID)\nif data.firstClawModel ~= nil and Argus.getEntityModel(eventArgs.entityID) == data.firstClawModel then\nTensorCore.getMoogleDrawer():addTimedRectOnEnt(7000,eventArgs.entityID,60,7)\nend\nself.used = true\n\n",
-						conditions = 
-						{
-							
-							{
-								"fa4c3f2f-af19-5d4e-8fe7-38d0482c47a6",
-								true,
-							},
-							
-							{
-								"89d0322d-b87a-4c69-b831-9bbd35a00e84",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "0192f147-b49f-c2b7-a701-3e4d3645d576",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return eventArgs.entityContentID == 13658 and eventArgs.wasVisible == false",
-						dequeueIfLuaFalse = true,
-						uuid = "89d0322d-b87a-4c69-b831-9bbd35a00e84",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						uuid = "fa4c3f2f-af19-5d4e-8fe7-38d0482c47a6",
-						version = 2,
-					},
-				},
-			},
-			eventType = 22,
-			name = "[DeathClaw] Clawmarks EntityVisibility",
-			uuid = "1d322d87-7fcb-dedf-9d5c-413982b33854",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "data.deathclawCones = data.deathclawCones or {}\ndata.deathclawCones[eventArgs.entityID] = TensorCore.getMoogleDrawer():addTimedConeOnEnt(7000,eventArgs.entityID,40,math.rad(90),nil)\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"af7e015f-e56c-b02f-bffa-6d35e42d7467",
-								true,
-							},
-							
-							{
-								"3dff59b3-6552-44b6-8ffe-d03350028d33",
-								true,
-							},
-							
-							{
-								"3101f3ac-f676-087b-a530-94ebe04426dc",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "de9c98eb-04af-cf63-a53b-243dd3e581ac",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "Argus.deleteTimedShape(data.deathclawCones[eventArgs.entityID])\ndata.deathclawCones[eventArgs.entityID] = nil\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"af7e015f-e56c-b02f-bffa-6d35e42d7467",
-								true,
-							},
-							
-							{
-								"92a83f85-62aa-4c5d-9041-216f3cffad2d",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "c322bdc3-999c-a3e9-aaf1-7e73d2489527",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return eventArgs.a2 == 16 and eventArgs.a3 == 32 and eventArgs.a4 == 0",
-						dequeueIfLuaFalse = true,
-						uuid = "3dff59b3-6552-44b6-8ffe-d03350028d33",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return eventArgs.a2 == 4 and eventArgs.a3 == 8 and eventArgs.a4 == 0\n\n",
-						dequeueIfLuaFalse = true,
-						uuid = "92a83f85-62aa-4c5d-9041-216f3cffad2d",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return data.deathclawCones == nil or table.size(data.deathclawCones) < 2",
-						uuid = "3101f3ac-f676-087b-a530-94ebe04426dc",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						uuid = "af7e015f-e56c-b02f-bffa-6d35e42d7467",
-						version = 2,
-					},
-				},
-			},
-			eventType = 19,
-			name = "[DeathClaw] EventObjectScript",
-			timeout = 15,
-			uuid = "118ded0f-fc6b-0567-a497-3e1c512af0ce",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "self.used = true",
-						conditions = 
-						{
-							
-							{
-								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
-								true,
-							},
-							
-							{
-								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "0c6ea1e6-0a85-5253-ad24-e7ce49b39bda",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "self.used = true",
-						conditions = 
-						{
-							
-							{
-								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
-								true,
-							},
-							
-							{
-								"89351613-c8ea-8c06-a135-184e8bd4eec9",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						uuid = "4b220914-a606-b0d0-b801-54b741def816",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h-math.pi/2)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi/2)\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
-								true,
-							},
-							
-							{
-								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						name = "Horizontal",
-						uuid = "af2407d0-4ace-3dd7-8c61-b088dd3730e2",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi)\nself.used = true",
-						conditions = 
-						{
-							
-							{
-								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
-								true,
-							},
-							
-							{
-								"89351613-c8ea-8c06-a135-184e8bd4eec9",
-								true,
-							},
-						},
-						gVar = "ACR_RikuMNK3_CD",
-						name = "Vertical",
-						uuid = "b456e23d-056a-a296-8a67-03c1a63ffd31",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 3,
-						eventArgType = 2,
-						eventSpellID = 41324,
-						name = "Horizontal Crosshatch",
-						spellIDList = 
-						{
-							41324,
-							41331,
-						},
-						uuid = "d87b88ed-15b7-3126-8ab9-02a737bc5b37",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 3,
-						eventArgType = 2,
-						eventSpellID = 41323,
-						name = "Vertical Crosshatch",
-						spellIDList = 
-						{
-							41323,
-							41330,
-						},
-						uuid = "89351613-c8ea-8c06-a135-184e8bd4eec9",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						uuid = "162641a4-b299-b4e9-83a0-bd3da968ac8a",
-						version = 2,
-					},
-				},
-			},
-			eventType = 3,
-			name = "[DeathClaw] Crosshatch OnEntityChannel",
-			throttleTime = 500,
-			uuid = "1c84dd35-be14-a6d1-989e-c303d9c877a2",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
 						actionLua = "if eventArgs.newTetherID == 303 then \n\tTensorCore.getMoogleDrawer():addTimedCircleOnEnt(5000,eventArgs.newTargetID,16) \nend\n\nif eventArgs.newTetherID == 304 then \n\tTensorCore.getMoogleDrawer():addTimedCrossOnEnt(5000,eventArgs.newTargetID,40,10) \nend\n--TensorCore.getMoogleDrawer()\nself.used = true",
 						conditions = 
 						{
@@ -8322,6 +7909,676 @@ local tbl =
 			eventType = 3,
 			name = "[NeoGarula] Rushing Rumble Cast",
 			uuid = "d82cd16f-eb3c-fed7-8319-a2657db41004",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "MoogleTelegraphs.Settings.aoeIDUserBlacklist[eventArgs.aoeID] = {label = \"Lethal Nails\", source = \"CE: Deathclaw\"}\nlocal delay = eventArgs.delay-2.5\nTensorCore.getMoogleDrawer():addTimedRectOnEnt((eventArgs.duration-delay)*1000,eventArgs.entityID,50,eventArgs.aoeWidth,nil,delay*1000)\ndata.firstClawModel = nil\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"77a3f58d-a783-7f7b-9181-a985b5f28107",
+								true,
+							},
+							
+							{
+								"ebed26f6-d5ad-9622-9e62-354e7fe6cb2b",
+								true,
+							},
+							
+							{
+								"433c299f-65b9-c062-9c25-547f4bab7dbf",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "4bb9c9cd-fce1-0703-9754-8fca5d8f166c",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return eventArgs.aoeName == \"Lethal Nails\"",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						spellIDList = 
+						{
+							41315,
+							41316,
+							41317,
+							41318,
+							41319,
+						},
+						uuid = "ebed26f6-d5ad-9622-9e62-354e7fe6cb2b",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						uuid = "77a3f58d-a783-7f7b-9181-a985b5f28107",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local player = TensorCore.mGetPlayer()\nreturn TensorCore.getDistance2d(player.pos, { h = 0, x = 680, y = 74, z = 534 }) < 40",
+						dequeueIfLuaFalse = true,
+						name = "In Deathclaw Arena",
+						uuid = "433c299f-65b9-c062-9c25-547f4bab7dbf",
+						version = 2,
+					},
+				},
+			},
+			eventType = 18,
+			name = "[DeathClaw] Clawmarks AoE",
+			uuid = "c2e2e902-e333-f7c0-b47a-afc01c26fd3b",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "data.firstClawModel = data.firstClawModel or Argus.getEntityModel(eventArgs.entityID)\nif data.firstClawModel ~= nil and Argus.getEntityModel(eventArgs.entityID) == data.firstClawModel then\nTensorCore.getMoogleDrawer():addTimedRectOnEnt(7000,eventArgs.entityID,60,7)\nend\nself.used = true\n\n",
+						conditions = 
+						{
+							
+							{
+								"fa4c3f2f-af19-5d4e-8fe7-38d0482c47a6",
+								true,
+							},
+							
+							{
+								"89d0322d-b87a-4c69-b831-9bbd35a00e84",
+								true,
+							},
+							
+							{
+								"82f9e7f1-321f-5461-b8b3-4cadcadae348",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "0192f147-b49f-c2b7-a701-3e4d3645d576",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return eventArgs.entityContentID == 13658 and eventArgs.wasVisible == false",
+						dequeueIfLuaFalse = true,
+						uuid = "89d0322d-b87a-4c69-b831-9bbd35a00e84",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						uuid = "fa4c3f2f-af19-5d4e-8fe7-38d0482c47a6",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local player = TensorCore.mGetPlayer()\nreturn TensorCore.getDistance2d(player.pos, { h = 0, x = 680, y = 74, z = 534 }) < 40",
+						dequeueIfLuaFalse = true,
+						name = "In Deathclaw Arena",
+						uuid = "82f9e7f1-321f-5461-b8b3-4cadcadae348",
+						version = 2,
+					},
+				},
+			},
+			eventType = 22,
+			name = "[DeathClaw] Clawmarks EntityVisibility",
+			uuid = "8b5df8bf-33e5-e012-8f07-35e47c3553bd",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "data.deathclawCones = data.deathclawCones or {}\ndata.deathclawCones[eventArgs.entityID] = TensorCore.getMoogleDrawer():addTimedConeOnEnt(7000,eventArgs.entityID,40,math.rad(90),nil)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"af7e015f-e56c-b02f-bffa-6d35e42d7467",
+								true,
+							},
+							
+							{
+								"3dff59b3-6552-44b6-8ffe-d03350028d33",
+								true,
+							},
+							
+							{
+								"3101f3ac-f676-087b-a530-94ebe04426dc",
+								true,
+							},
+							
+							{
+								"617b5141-a395-cb8e-a507-3ef77774b1d8",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "de9c98eb-04af-cf63-a53b-243dd3e581ac",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "Argus.deleteTimedShape(data.deathclawCones[eventArgs.entityID])\ndata.deathclawCones[eventArgs.entityID] = nil\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"af7e015f-e56c-b02f-bffa-6d35e42d7467",
+								true,
+							},
+							
+							{
+								"92a83f85-62aa-4c5d-9041-216f3cffad2d",
+								true,
+							},
+							
+							{
+								"617b5141-a395-cb8e-a507-3ef77774b1d8",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "c322bdc3-999c-a3e9-aaf1-7e73d2489527",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return eventArgs.a2 == 16 and eventArgs.a3 == 32 and eventArgs.a4 == 0",
+						dequeueIfLuaFalse = true,
+						uuid = "3dff59b3-6552-44b6-8ffe-d03350028d33",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return eventArgs.a2 == 4 and eventArgs.a3 == 8 and eventArgs.a4 == 0\n\n",
+						dequeueIfLuaFalse = true,
+						uuid = "92a83f85-62aa-4c5d-9041-216f3cffad2d",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return data.deathclawCones == nil or table.size(data.deathclawCones) < 2",
+						uuid = "3101f3ac-f676-087b-a530-94ebe04426dc",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						uuid = "af7e015f-e56c-b02f-bffa-6d35e42d7467",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local player = TensorCore.mGetPlayer()\nreturn TensorCore.getDistance2d(player.pos, { h = 0, x = 680, y = 74, z = 534 }) < 40",
+						dequeueIfLuaFalse = true,
+						name = "In Deathclaw Arena",
+						uuid = "617b5141-a395-cb8e-a507-3ef77774b1d8",
+						version = 2,
+					},
+				},
+			},
+			eventType = 19,
+			name = "[DeathClaw] EventObjectScript",
+			timeout = 15,
+			uuid = "17e6a475-9ab7-00e1-ad31-af75e6073ff2",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "self.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "0c6ea1e6-0a85-5253-ad24-e7ce49b39bda",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "self.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"89351613-c8ea-8c06-a135-184e8bd4eec9",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "4b220914-a606-b0d0-b801-54b741def816",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h-math.pi/2)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi/2)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						name = "Horizontal",
+						uuid = "af2407d0-4ace-3dd7-8c61-b088dd3730e2",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"89351613-c8ea-8c06-a135-184e8bd4eec9",
+								true,
+							},
+							
+							{
+								"0e9fa33a-38c1-2338-9f85-75d9ce25bc7c",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						name = "Vertical",
+						uuid = "b456e23d-056a-a296-8a67-03c1a63ffd31",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						eventSpellID = 41324,
+						name = "Horizontal Crosshatch",
+						spellIDList = 
+						{
+							41324,
+							41331,
+						},
+						uuid = "d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						eventSpellID = 41323,
+						name = "Vertical Crosshatch",
+						spellIDList = 
+						{
+							41323,
+							41330,
+						},
+						uuid = "89351613-c8ea-8c06-a135-184e8bd4eec9",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						uuid = "162641a4-b299-b4e9-83a0-bd3da968ac8a",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local player = TensorCore.mGetPlayer()\nreturn TensorCore.getDistance2d(player.pos, { h = 0, x = 680, y = 74, z = 534 }) < 40",
+						dequeueIfLuaFalse = true,
+						name = "In Deathclaw Arena",
+						uuid = "0e9fa33a-38c1-2338-9f85-75d9ce25bc7c",
+						version = 2,
+					},
+				},
+			},
+			eventType = 3,
+			name = "[DeathClaw] Crosshatch OnEntityChannel",
+			throttleTime = 500,
+			uuid = "ba99423d-bf7c-c3e2-b84b-ae7da56bc69e",
+			version = 2,
+		},
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "self.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "0c6ea1e6-0a85-5253-ad24-e7ce49b39bda",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "self.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"89351613-c8ea-8c06-a135-184e8bd4eec9",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						uuid = "4b220914-a606-b0d0-b801-54b741def816",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h-math.pi/2)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi/2)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						name = "Horizontal",
+						uuid = "af2407d0-4ace-3dd7-8c61-b088dd3730e2",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local ent = TensorCore.mGetEntity(eventArgs.entityID)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h)\nTensorCore.getMoogleDrawer():addTimedCone((eventArgs.channelTimeMax*1000)-500,ent.pos.x,ent.pos.y,ent.pos.z,40,math.rad(90),ent.pos.h+math.pi)\nself.used = true",
+						conditions = 
+						{
+							
+							{
+								"162641a4-b299-b4e9-83a0-bd3da968ac8a",
+								true,
+							},
+							
+							{
+								"89351613-c8ea-8c06-a135-184e8bd4eec9",
+								true,
+							},
+							
+							{
+								"0e9fa33a-38c1-2338-9f85-75d9ce25bc7c",
+								true,
+							},
+						},
+						gVar = "ACR_RikuMNK3_CD",
+						name = "Vertical",
+						uuid = "b456e23d-056a-a296-8a67-03c1a63ffd31",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						eventSpellID = 41324,
+						name = "Horizontal Crosshatch",
+						spellIDList = 
+						{
+							41324,
+							41331,
+						},
+						uuid = "d87b88ed-15b7-3126-8ab9-02a737bc5b37",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						eventSpellID = 41323,
+						name = "Vertical Crosshatch",
+						spellIDList = 
+						{
+							41323,
+							41330,
+						},
+						uuid = "89351613-c8ea-8c06-a135-184e8bd4eec9",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						uuid = "162641a4-b299-b4e9-83a0-bd3da968ac8a",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "local player = TensorCore.mGetPlayer()\nreturn TensorCore.getDistance2d(player.pos, { h = 0, x = 680, y = 74, z = 534 }) < 40",
+						dequeueIfLuaFalse = true,
+						name = "In Deathclaw Arena",
+						uuid = "0e9fa33a-38c1-2338-9f85-75d9ce25bc7c",
+						version = 2,
+					},
+				},
+			},
+			eventType = 3,
+			name = "[DeathClaw] Crosshatch OnEntityChannel",
+			throttleTime = 500,
+			uuid = "0baa1914-abcd-7175-8f51-0d15fb256a1b",
 			version = 2,
 		},
 	}, 
