@@ -7913,259 +7913,6 @@ local tbl =
 					data = 
 					{
 						aType = "Lua",
-						actionLua = "data.ocGarulaMarkerBirdEntID = eventArgs.entityID\nself.used=true",
-						conditions = 
-						{
-							
-							{
-								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-								true,
-							},
-							
-							{
-								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
-								true,
-							},
-							
-							{
-								"831587ec-aa31-c05d-9716-7138cd1f2de9",
-								true,
-							},
-						},
-						gVar = "ACR_TensorWeeb3_CD",
-						name = "Record Bird Entity ID",
-						uuid = "cfc2248e-d420-e105-be82-c70775882def",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local pi = math.pi\nlocal frontRight = pi / 4\nlocal frontLeft = -pi / 4\nlocal backRight = (3 * pi) / 4\nlocal backLeft = -(3 * pi) / 4\n\nlocal coneAngle = 45\nlocal coneRad = coneAngle * (pi / 180)\nlocal coneLength = 70\nlocal circleRadius = 30\nlocal birdHitRadius = 6\n\nlocal drawDuration = 7000\nlocal drawDelay = 200\n\nlocal function normalizeHeading(heading)\n    return ((heading + pi) % (2 * pi)) - pi\nend\n\nlocal neoGarulaPos\nfor _, foundEntity in pairs(TensorCore.entityList(\"contentid=13638\")) do\n\tneoGarulaPos = foundEntity.pos\n\tbreak\nend\n\nlocal chatterbirdEnt = TensorCore.mGetEntity(data.ocGarulaMarkerBirdEntID)\nlocal chatterbirdPos = chatterbirdEnt.pos\n\nlocal garulaToBirdHeading = TensorCore.getHeadingToTarget(neoGarulaPos, chatterbirdPos)\n--local garulaFrontRight = normalizeHeading(garulaToBirdHeading + frontRight)\n--local garulaFrontLeft = normalizeHeading(garulaToBirdHeading + frontLeft)\nlocal garulaBackRight = normalizeHeading(garulaToBirdHeading + backRight)\nlocal garulaBackLeft = normalizeHeading(garulaToBirdHeading + backLeft)\n\nlocal birdToGarulaHeading = normalizeHeading(garulaToBirdHeading + pi)\nlocal garulaEndPoint = TensorCore.getPosInDirection(chatterbirdPos, birdToGarulaHeading, birdHitRadius)\n\nlocal moogleDrawer = TensorCore.getMoogleDrawer()\n\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackRight, drawDelay)\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackLeft, drawDelay)\nmoogleDrawer:addTimedCircle(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,circleRadius, drawDelay)\n\ndata.ocGarulaChargeCount = data.ocGarulaChargeCount + 1\nif data.ocGarulaChargeCount >= 3 then\n\tdata.ocGarulaRushingRumble = false\nend\n\nself.used=true",
-						conditions = 
-						{
-							
-							{
-								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-								true,
-							},
-							
-							{
-								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
-								true,
-							},
-							
-							{
-								"831587ec-aa31-c05d-9716-7138cd1f2de9",
-								true,
-							},
-							
-							{
-								"3d093ac1-e37c-273a-b7d2-8459b1579b66",
-								true,
-							},
-						},
-						gVar = "ACR_TensorWeeb3_CD",
-						name = "Draw AOE",
-						uuid = "4dbf96b7-f4b8-ef35-9f71-4331b377f382",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						name = "In OC",
-						uuid = "3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgType = 2,
-						eventMarkerID = 578,
-						name = "Marker ID",
-						uuid = "31ab17ca-1766-b858-8c32-5e1ede7eab12",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 2,
-						eventEntityContentID = 13639,
-						name = "Marker On Bird",
-						uuid = "831587ec-aa31-c05d-9716-7138cd1f2de9",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Lua",
-						conditionLua = "return data.ocGarulaRushingRumble == true",
-						dequeueIfLuaFalse = true,
-						name = "Is Rushing Rumble",
-						uuid = "3d093ac1-e37c-273a-b7d2-8459b1579b66",
-						version = 2,
-					},
-				},
-			},
-			eventType = 4,
-			name = "[NeoGarula] Rushing Rumble Bird Marked",
-			uuid = "0fcb95f0-5a5e-5621-b67e-0fb275ff7e19",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "data.ocGarulaRushingRumble = true\nself.used=true",
-						conditions = 
-						{
-							
-							{
-								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-								true,
-							},
-							
-							{
-								"831587ec-aa31-c05d-9716-7138cd1f2de9",
-								true,
-							},
-							
-							{
-								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
-								true,
-							},
-						},
-						gVar = "ACR_TensorWeeb3_CD",
-						name = "Record Rushing Rumble",
-						uuid = "cfc2248e-d420-e105-be82-c70775882def",
-						version = 2.1,
-					},
-				},
-				
-				{
-					data = 
-					{
-						aType = "Lua",
-						actionLua = "local pi = math.pi\nlocal frontRight = pi / 4\nlocal frontLeft = -pi / 4\nlocal backRight = (3 * pi) / 4\nlocal backLeft = -(3 * pi) / 4\n\nlocal coneAngle = 45\nlocal coneRad = coneAngle * (pi / 180)\nlocal coneLength = 70\nlocal circleRadius = 30\nlocal birdHitRadius = 6\n\nlocal drawDuration = 8250\n\nlocal function normalizeHeading(heading)\n    return ((heading + pi) % (2 * pi)) - pi\nend\n\nlocal neoGarulaPos\nfor _, foundEntity in pairs(TensorCore.entityList(\"contentid=13638\")) do\n\tneoGarulaPos = foundEntity.pos\n\tbreak\nend\n\nlocal chatterbirdEnt = TensorCore.mGetEntity(data.ocGarulaMarkerBirdEntID)\nlocal chatterbirdPos = chatterbirdEnt.pos\n\nlocal garulaToBirdHeading = TensorCore.getHeadingToTarget(neoGarulaPos, chatterbirdPos)\n--local garulaFrontRight = normalizeHeading(garulaToBirdHeading + frontRight)\n--local garulaFrontLeft = normalizeHeading(garulaToBirdHeading + frontLeft)\nlocal garulaBackRight = normalizeHeading(garulaToBirdHeading + backRight)\nlocal garulaBackLeft = normalizeHeading(garulaToBirdHeading + backLeft)\n\nlocal birdToGarulaHeading = normalizeHeading(garulaToBirdHeading + pi)\nlocal garulaEndPoint = TensorCore.getPosInDirection(chatterbirdPos, birdToGarulaHeading, birdHitRadius)\n\nlocal moogleDrawer = TensorCore.getMoogleDrawer()\n\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackRight)\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackLeft)\nmoogleDrawer:addTimedCircle(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,circleRadius)\n\ndata.ocGarulaChargeCount = 1\n\nself.used=true",
-						conditions = 
-						{
-							
-							{
-								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-								true,
-							},
-							
-							{
-								"831587ec-aa31-c05d-9716-7138cd1f2de9",
-								true,
-							},
-							
-							{
-								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
-								true,
-							},
-						},
-						gVar = "ACR_TensorWeeb3_CD",
-						name = "Draw AOE",
-						uuid = "c4f1f772-3f43-ca0d-9b65-950c281fa28c",
-						version = 2.1,
-					},
-				},
-			},
-			conditions = 
-			{
-				
-				{
-					data = 
-					{
-						category = "Self",
-						conditionType = 8,
-						dequeueIfLuaFalse = true,
-						localmapid = 1252,
-						name = "In OC",
-						uuid = "3d713919-4904-c97e-bb72-5fba1cc7d8d1",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 2,
-						eventEntityContentID = 13638,
-						name = "Is Neo Garula",
-						uuid = "831587ec-aa31-c05d-9716-7138cd1f2de9",
-						version = 2,
-					},
-				},
-				
-				{
-					data = 
-					{
-						category = "Event",
-						dequeueIfLuaFalse = true,
-						eventArgOptionType = 3,
-						eventArgType = 2,
-						eventMarkerID = 578,
-						name = "Is Rushing Rumble",
-						spellIDList = 
-						{
-							41175,
-							41177,
-						},
-						uuid = "31ab17ca-1766-b858-8c32-5e1ede7eab12",
-						version = 2,
-					},
-				},
-			},
-			eventType = 3,
-			name = "[NeoGarula] Rushing Rumble Cast",
-			uuid = "b8de918c-79f1-60fe-b5aa-1cf28624b1b9",
-			version = 2,
-		},
-	},
-	
-	{
-		data = 
-		{
-			actions = 
-			{
-				
-				{
-					data = 
-					{
-						aType = "Lua",
 						actionLua = "if data.dedoSpiralCircle == nil or TimeSince(data.dedoSpiralCircle) > 20000 then\ndata.dedoSpiralCircle = Now()\ndata.dedoSpiralCircleCount = 0\nend\n\nlocal bossID\nif data.dedoSpiralCircleCount == 1 then\nfor id,ent in pairs(TensorCore.entityList(\"contentid=13726,nearest,attackable\")) do\nbossID = id\nend\nlocal epos = TensorCore.mGetEntity(bossID).pos\nlocal newPos = TensorCore.getPosInDirection(epos,epos.h+math.pi+math.rad(25),10)\n\nTensorCore.getStaticDrawer(1845559113):addTimedCircle(9200,newPos.x,newPos.y,newPos.z,1.5)\nTensorCore.getStaticDrawer(1845494015):addTimedCircle(9200,eventArgs.x,eventArgs.y,eventArgs.z,eventArgs.aoeLength)\nTensorCore.getStaticDrawer(1845559113):addTimedCircle(9200,eventArgs.x,eventArgs.y,eventArgs.z,eventArgs.aoeLength/2,9200)\nelse\nTensorCore.getMoogleDrawer():addTimedCircle(5200,eventArgs.x,eventArgs.y,eventArgs.z,eventArgs.aoeLength,4000)\n\nend \n\ndata.dedoSpiralCircleCount = data.dedoSpiralCircleCount + 1\nself.used = true",
 						conditions = 
 						{
@@ -8304,6 +8051,279 @@ local tbl =
 			version = 2,
 		},
 		inheritedIndex = 47,
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "data.ocGarulaMarkerBirdEntID = eventArgs.entityID\nself.used=true",
+						conditions = 
+						{
+							
+							{
+								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+								true,
+							},
+							
+							{
+								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
+								true,
+							},
+							
+							{
+								"831587ec-aa31-c05d-9716-7138cd1f2de9",
+								true,
+							},
+						},
+						gVar = "ACR_TensorWeeb3_CD",
+						name = "Record Bird Entity ID",
+						uuid = "cfc2248e-d420-e105-be82-c70775882def",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local pi = math.pi\nlocal frontRight = -pi / 4\nlocal frontLeft = pi / 4\nlocal backRight = -(3 * pi) / 4\nlocal backLeft = (3 * pi) / 4\n\nlocal coneAngle = 45\nlocal coneRad = coneAngle * (pi / 180)\nlocal coneLength = 70\nlocal circleRadius = 30\nlocal birdHitRadius = 6\n\nlocal drawDuration = 8250\nlocal drawDelay = 2000\n\nlocal function normalizeHeading(heading)\n    return ((heading + pi) % (2 * pi)) - pi\nend\n\nlocal chatterbirdEnt = TensorCore.mGetEntity(data.ocGarulaMarkerBirdEntID)\nlocal chatterbirdPos = chatterbirdEnt.pos\nlocal neoGarulaPos = data.ocGarulaPrevEndPoint\n\nif neoGarulaPos then\n\tlocal garulaEndPoint = TensorCore.getPosInDirection(chatterbirdPos, chatterbirdPos.h, birdHitRadius)\n\tdata.ocGarulaPrevEndPoint = garulaEndPoint\n\n\tlocal garulaToEndPointHeading = TensorCore.getHeadingToTarget(neoGarulaPos, garulaEndPoint)\n\t--local garulaFrontRight = normalizeHeading(garulaToEndPointHeading + frontRight)\n\t--local garulaFrontLeft = normalizeHeading(garulaToEndPointHeading + frontLeft)\n\tlocal garulaBackRight = normalizeHeading(garulaToEndPointHeading + backRight)\n\tlocal garulaBackLeft = normalizeHeading(garulaToEndPointHeading + backLeft)\n\n\tlocal moogleDrawer = TensorCore.getMoogleDrawer()\n\n\tmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackRight, drawDelay)\n\tmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackLeft, drawDelay)\n\tmoogleDrawer:addTimedCircle(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,circleRadius, drawDelay)\n\n\tdata.ocGarulaChargeCount = data.ocGarulaChargeCount + 1\n\tif data.ocGarulaChargeCount >= 3 then\n\t\tdata.ocGarulaRushingRumbleRampage = false\n\tend\nend\n\nself.used=true",
+						conditions = 
+						{
+							
+							{
+								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+								true,
+							},
+							
+							{
+								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
+								true,
+							},
+							
+							{
+								"831587ec-aa31-c05d-9716-7138cd1f2de9",
+								true,
+							},
+							
+							{
+								"3d093ac1-e37c-273a-b7d2-8459b1579b66",
+								true,
+							},
+						},
+						gVar = "ACR_TensorWeeb3_CD",
+						name = "Draw AOE Charge 2 & 3",
+						uuid = "4dbf96b7-f4b8-ef35-9f71-4331b377f382",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						name = "In OC",
+						uuid = "3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgType = 2,
+						eventMarkerID = 578,
+						name = "Marker ID",
+						uuid = "31ab17ca-1766-b858-8c32-5e1ede7eab12",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 2,
+						eventEntityContentID = 13639,
+						name = "Marker On Bird",
+						uuid = "831587ec-aa31-c05d-9716-7138cd1f2de9",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Lua",
+						conditionLua = "return data.ocGarulaRushingRumbleRampage == true",
+						dequeueIfLuaFalse = true,
+						name = "Is Rushing Rumble Rampage",
+						uuid = "3d093ac1-e37c-273a-b7d2-8459b1579b66",
+						version = 2,
+					},
+				},
+			},
+			eventType = 4,
+			name = "[NeoGarula] Rushing Rumble Bird Marked",
+			uuid = "c444fd4f-22b2-43d7-bdf3-9d3d6f951f6c",
+			version = 2,
+		},
+		inheritedIndex = 43,
+	},
+	
+	{
+		data = 
+		{
+			actions = 
+			{
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "data.ocGarulaRushingRumbleRampage = true\nself.used=true",
+						conditions = 
+						{
+							
+							{
+								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+								true,
+							},
+							
+							{
+								"831587ec-aa31-c05d-9716-7138cd1f2de9",
+								true,
+							},
+							
+							{
+								"31ab17ca-1766-b858-8c32-5e1ede7eab12",
+								true,
+							},
+						},
+						gVar = "ACR_TensorWeeb3_CD",
+						name = "Record Rushing Rumble Rampage",
+						uuid = "cfc2248e-d420-e105-be82-c70775882def",
+						version = 2.1,
+					},
+				},
+				
+				{
+					data = 
+					{
+						aType = "Lua",
+						actionLua = "local pi = math.pi\nlocal frontRight = -pi / 4\nlocal frontLeft = pi / 4\nlocal backRight = -(3 * pi) / 4\nlocal backLeft = (3 * pi) / 4\n\nlocal coneAngle = 45\nlocal coneRad = coneAngle * (pi / 180)\nlocal coneLength = 70\nlocal circleRadius = 30\nlocal birdHitRadius = 6\n\nlocal drawDuration = 9250\n\nlocal function normalizeHeading(heading)\n    return ((heading + pi) % (2 * pi)) - pi\nend\n\nlocal neoGarulaPos\nfor _, foundEntity in pairs(TensorCore.entityList(\"contentid=13638,attackable\")) do\n\tneoGarulaPos = foundEntity.pos\n\tbreak\nend\n\nlocal chatterbirdEnt = TensorCore.mGetEntity(data.ocGarulaMarkerBirdEntID)\nlocal chatterbirdPos = chatterbirdEnt.pos\n\nlocal garulaEndPoint = TensorCore.getPosInDirection(chatterbirdPos, chatterbirdPos.h, birdHitRadius)\ndata.ocGarulaPrevEndPoint = garulaEndPoint\n\nlocal garulaToEndPointHeading = TensorCore.getHeadingToTarget(neoGarulaPos, garulaEndPoint)\n--local garulaFrontRight = normalizeHeading(garulaToEndPointHeading + frontRight)\n--local garulaFrontLeft = normalizeHeading(garulaToEndPointHeading + frontLeft)\nlocal garulaBackRight = normalizeHeading(garulaToEndPointHeading + backRight)\nlocal garulaBackLeft = normalizeHeading(garulaToEndPointHeading + backLeft)\n\nlocal moogleDrawer = TensorCore.getMoogleDrawer()\n\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackRight)\nmoogleDrawer:addTimedCone(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,coneLength,coneRad,garulaBackLeft)\nmoogleDrawer:addTimedCircle(drawDuration,garulaEndPoint.x,garulaEndPoint.y,garulaEndPoint.z,circleRadius)\n\ndata.ocGarulaChargeCount = 1\n\nself.used=true",
+						conditions = 
+						{
+							
+							{
+								"3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+								true,
+							},
+							
+							{
+								"831587ec-aa31-c05d-9716-7138cd1f2de9",
+								true,
+							},
+							
+							{
+								"a1b5af49-de07-7460-9a69-50545e276d84",
+								true,
+							},
+						},
+						gVar = "ACR_TensorWeeb3_CD",
+						name = "Draw AOE Charge 1",
+						uuid = "c4f1f772-3f43-ca0d-9b65-950c281fa28c",
+						version = 2.1,
+					},
+				},
+			},
+			conditions = 
+			{
+				
+				{
+					data = 
+					{
+						category = "Self",
+						conditionType = 8,
+						dequeueIfLuaFalse = true,
+						localmapid = 1252,
+						name = "In OC",
+						uuid = "3d713919-4904-c97e-bb72-5fba1cc7d8d1",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 2,
+						eventEntityContentID = 13638,
+						name = "Is Neo Garula",
+						uuid = "831587ec-aa31-c05d-9716-7138cd1f2de9",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgOptionType = 3,
+						eventArgType = 2,
+						eventMarkerID = 578,
+						name = "Is Rushing Rumble (Rampage)",
+						spellIDList = 
+						{
+							41175,
+							41177,
+						},
+						uuid = "a1b5af49-de07-7460-9a69-50545e276d84",
+						version = 2,
+					},
+				},
+				
+				{
+					data = 
+					{
+						category = "Event",
+						dequeueIfLuaFalse = true,
+						eventArgType = 2,
+						eventMarkerID = 578,
+						eventSpellID = 41177,
+						name = "Is Rushing Rumble Rampage",
+						spellIDList = 
+						{
+							41175,
+							41177,
+						},
+						uuid = "31ab17ca-1766-b858-8c32-5e1ede7eab12",
+						version = 2,
+					},
+				},
+			},
+			eventType = 3,
+			name = "[NeoGarula] Rushing Rumble Cast",
+			uuid = "d82cd16f-eb3c-fed7-8319-a2657db41004",
+			version = 2,
+		},
 	}, 
 	inheritedProfiles = 
 	{
